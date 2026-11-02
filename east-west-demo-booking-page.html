@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>East-West Snow Services — Book a Service | Free Demo Page</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#1d2733;line-height:1.5;background:#f4f8fb}
+header{background:#0b4f6c;color:#fff;padding:28px 18px}header h1{margin:0 0 6px;font-size:28px}header p{margin:4px 0;max-width:720px}
+main{max-width:820px;margin:0 auto;padding:18px}.card{background:#fff;border-radius:10px;padding:18px;margin:14px 0;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+h2{margin-top:0;color:#0b4f6c}.pkg{border:1px solid #d7e3ec;border-radius:8px;padding:12px;margin:10px 0}
+.pkg b{color:#0b4f6c}label{display:block;margin:10px 0 4px;font-weight:bold}
+input,select,textarea{width:100%;padding:10px;border:1px solid #b9c9d6;border-radius:6px;font-size:16px}
+button{background:#0b4f6c;color:#fff;border:0;border-radius:6px;padding:12px 18px;font-size:16px;cursor:pointer}
+button:hover{background:#083d54}.est{background:#e8f4f8;border:1px solid #9cc6d8;border-radius:8px;padding:14px;margin-top:14px;font-size:18px}
+.note{font-size:13px;color:#52606d}.err{color:#b00020;font-size:14px}
+.ok{background:#e6f4ea;border:1px solid #8fce9b;border-radius:8px;padding:14px;margin-top:14px}
+table{width:100%;border-collapse:collapse}td,th{border:1px solid #d7e3ec;padding:8px;text-align:left}
+footer{max-width:820px;margin:0 auto;padding:10px 18px 30px;color:#52606d;font-size:13px}
+@media(max-width:520px){header h1{font-size:23px}main{padding:12px}.card{padding:14px}}
+</style>
+</head>
+<body>
+<header>
+<h1>East-West Snow Services</h1>
+<p>Commercial snow & ice management — Toronto & the GTA, since 1958.</p>
+<p>416-691-2626 · 201 Hymus Road, Toronto · Family owned since 1958, fully insured, WSIB compliant.</p>
+<p><b>Free demo booking page</b> — built by York Digital to show what online booking could look like for East-West Snow Services. This is a demonstration only.</p>
+</header>
+<main>
+<section class="card">
+<h2>Services</h2>
+<div class="pkg"><b>Plowing</b> — Parking lots, access roads and yards plowed to bare pavement. <button type="button" onclick="pick('plowing')">Book plowing</button></div>
+<div class="pkg"><b>Salting & de-icing</b> — Calibrated salt and premium de-icer for lots, entrances and walkways. <button type="button" onclick="pick('salting')">Book salting & de-icing</button></div>
+<div class="pkg"><b>Sidewalk clearing</b> — Entrances, walkways and accessibility routes cleared by machine and hand crews. <button type="button" onclick="pick('sidewalk')">Book sidewalk clearing</button></div>
+<div class="pkg"><b>Snow hauling</b> — Snow loaded and hauled off site when piles cost parking spaces. <button type="button" onclick="pick('hauling')">Book snow hauling</button></div>
+<p class="note">Photos on this demo page are generic illustrations, not photos of East-West Snow Services crews or jobs.</p>
+</section>
+<section class="card">
+<h2>Instant estimate calculator</h2>
+<p class="note">Demo rates below are illustrative estimates for this demo only — East-West Snow Services publishes no per-unit prices for these services, so final pricing is confirmed by East-West Snow Services after your request.</p>
+<label for="service">Service</label>
+<select id="service" onchange="calc()">
+<option value="plowing">Plowing</option>
+<option value="salting">Salting & de-icing</option>
+<option value="sidewalk">Sidewalk clearing</option>
+<option value="hauling">Snow hauling</option>
+</select>
+<div id="qtyWrap">
+<label for="qty" id="qtyLabel">Quantity</label>
+<input type="number" id="qty" value="20000" min="1" oninput="calc()">
+</div>
+<div id="sideWrap">
+<label><input type="checkbox" id="both" onchange="calc()" style="width:auto"> Clean inside and out (×1.6)</label>
+</div>
+<div class="est" id="estimate">Your estimate will appear here.</div>
+<p class="note" id="calcNote"></p>
+<button type="button" onclick="useEstimate()">Use this estimate in my booking request</button>
+</section>
+<section class="card">
+<h2>Booking request</h2>
+<form id="bookForm" novalidate>
+<label for="name">Your name *</label><input id="name" required>
+<label for="phone">Phone *</label><input id="phone" type="tel" required>
+<label for="email">Email *</label><input id="email" type="email" required>
+<label for="fservice">Service *</label>
+<select id="fservice" required>
+<option value="">Choose a service</option>
+<option value="Plowing">Plowing</option>
+<option value="Salting & de-icing">Salting & de-icing</option>
+<option value="Sidewalk clearing">Sidewalk clearing</option>
+<option value="Snow hauling">Snow hauling</option>
+</select>
+<label for="prop">Property type</label>
+<select id="prop"><option>House</option><option>Condo / townhouse</option><option>Business</option></select>
+<label for="date">Preferred date *</label><input id="date" type="date" required>
+<label for="details">Details</label><textarea id="details" rows="3" placeholder="Anything East-West Snow Services should know."></textarea>
+<p class="err" id="formErr"></p>
+<button type="submit">Send booking request</button>
+</form>
+<div id="confirm"></div>
+<p class="note">Demo only: this form sends nothing. On East-West Snow Services's live page, requests would go straight to East-West Snow Services.</p>
+</section>
+<section class="card">
+<h2>For East-West Snow Services — from York Digital, Toronto</h2>
+<p>This demo page is free to look at. If you like it, it can be yours — <b>no setup fee</b>. You choose:</p>
+<ul>
+<li><b>$249/month, cancel anytime</b> — booking page, Google Business Profile tune-up, automatic review requests, monthly report.</li>
+<li><b>Or $30 per valid booking enquiry</b> — you only pay when a real enquiry comes in.</li>
+</ul>
+<p><b>What counts as a valid enquiry:</b> a request with a name, a working phone number or email, a service, a Toronto/GTA property, and a preferred date. Spam, duplicates, and wrong-number requests do not count.</p>
+<p><b>Sample monthly report (SAMPLE — example figures only, not East-West Snow Services's results):</b></p>
+<table><tr><th>Enquiries</th><th>Cost at $30 each</th></tr><tr><td>11</td><td>$330</td></tr></table>
+<p class="note">At 9 enquiries a month, the $249 flat plan costs less than $30 each (9 × $30 = $270). No guaranteed results — enquiries depend on your own traffic and demand.</p>
+<p>Questions or changes? Email <a href="mailto:yorkdigital@zohomailcloud.ca">yorkdigital@zohomailcloud.ca</a>. Want it left up, or taken down? Either reply works.</p>
+</section>
+</main>
+<footer>Free demo page built by York Digital, Toronto, for East-West Snow Services. Demo rates are illustrative only; East-West Snow Services confirms all real pricing. Contact East-West Snow Services directly at 416-691-2626 or service@east-westservices.com.</footer>
+<script>
+var RATES={"plowing": 0.04, "salting": 0.02, "sidewalk": 0.06, "hauling": 450};
+var LABELS={"plowing": "Square feet of lot", "salting": "Square feet to treat", "sidewalk": "Square feet of walkway", "hauling": "Truckloads to haul"};
+var PROJECT=[];
+var FORMMAP={"plowing": "Plowing", "salting": "Salting & de-icing", "sidewalk": "Sidewalk clearing", "hauling": "Snow hauling"};
+function round5(x){return Math.round(x/5)*5;}
+function calc(){
+  var s=document.getElementById('service').value;
+  var est=document.getElementById('estimate'),note=document.getElementById('calcNote');
+  document.getElementById('qtyLabel').textContent=LABELS[s]||"Quantity";
+  document.getElementById('sideWrap').style.display=(s==='none')?'block':'none';
+  document.getElementById('qtyWrap').style.display=(PROJECT.indexOf(s)>=0)?'none':'block';
+  if(PROJECT.indexOf(s)>=0){est.textContent="Priced per project — request a quote and East-West Snow Services confirms pricing.";note.textContent="";return null;}
+  var q=parseFloat(document.getElementById('qty').value)||0;
+  var base=q*RATES[s];
+  if(s==='none'&&document.getElementById('both').checked){base*=1.6;}
+  var lo=round5(base*0.9),hi=round5(base*1.1);
+  est.textContent="Demo estimate: $"+lo+" – $"+hi;
+  note.textContent="Based on "+q+" × $"+RATES[s].toFixed(2)+(s==='none'&&document.getElementById('both').checked?" × 1.6 inside and out":"")+" = $"+base.toFixed(2)+" before the ±10% range, rounded to the nearest $5. Illustrative demo rate only.";
+  return "$"+lo+" – $"+hi;
+}
+function pick(s){
+  document.getElementById('service').value=s;calc();
+  document.getElementById('fservice').value=FORMMAP[s];
+  document.getElementById('bookForm').scrollIntoView({behavior:'smooth'});
+}
+function useEstimate(){
+  var e=calc();var s=document.getElementById('service').value;
+  document.getElementById('fservice').value=FORMMAP[s];
+  document.getElementById('details').value=e?("Demo estimate: "+e):"Priced per project.";
+  document.getElementById('bookForm').scrollIntoView({behavior:'smooth'});
+}
+document.getElementById('bookForm').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var missing=[];
+  ['name','phone','email','fservice','date'].forEach(function(id){if(!document.getElementById(id).value.trim())missing.push(id);});
+  var err=document.getElementById('formErr');
+  if(missing.length){err.textContent="Please fill in: "+missing.join(", ")+".";return;}
+  err.textContent="";
+  var ref="EW-"+Math.random().toString(36).slice(2,8).toUpperCase();
+  var d=new Date(document.getElementById('date').value+"T12:00:00");
+  var fdate=d.toLocaleDateString('en-CA',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  document.getElementById('confirm').innerHTML='<div class="ok"><b>Booking request received (demo).</b><br>Name: '+document.getElementById('name').value+'<br>Phone: '+document.getElementById('phone').value+'<br>Service: '+document.getElementById('fservice').value+'<br>Property: '+document.getElementById('prop').value+'<br>Preferred date: '+fdate+'<br>Estimate: '+document.getElementById('details').value+'<br>Reference: '+ref+'<br><span class="note">Demo only: nothing was sent.</span></div>';
+});
+calc();
+</script>
+</body>
+</html>
