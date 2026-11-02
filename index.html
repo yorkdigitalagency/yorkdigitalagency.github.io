@@ -122,6 +122,10 @@
       .terms li::before { content: counter(term, decimal-leading-zero); position: absolute; left: 0; top: 14px; font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 600; color: var(--amber); }
       .terms li strong { display: block; font-size: 16px; margin-bottom: 2px; }
       .terms li span { color: var(--ink-2); }
+      details.terms-details { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 26px; }
+      details.terms-details summary { font-weight: 700; font-size: 17px; cursor: pointer; color: var(--pine); }
+      details.terms-details summary:hover { text-decoration: underline; }
+      details.terms-details .terms { border: none; padding: 18px 0 0; background: transparent; }
       .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
       .plan { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; gap: 8px; }
       .plan.featured { border: 2px solid var(--pine); }
@@ -403,8 +407,10 @@
           <div class="sec-head">
             <p class="sec-tag">In writing</p>
             <h2>The terms, before you ever pay</h2>
-            <p>No contract appears after the sales call here — there is no sales call. These are the terms every York Digital engagement runs on, published where you can hold us to them.</p>
+            <p>No contract appears after the sales call here — there is no sales call. These are the terms every York Digital engagement runs on — open the link below and hold us to them.</p>
           </div>
+          <details class="terms-details">
+            <summary>Read the terms — 10 short promises, in writing</summary>
           <div class="terms">
             <ol>
               <li><strong>Demo first, free</strong><span>We build a working demo page for your business before you pay anything. Don&rsquo;t like it? Walk away — there&rsquo;s nothing to cancel.</span></li>
@@ -418,7 +424,8 @@
               <li><strong>Everything in writing</strong><span>All communication is by email, so every promise either of us makes lives in an email you can find later. Nothing important is ever &ldquo;just said on a call.&rdquo;</span></li>
               <li><strong>Replies within one business day</strong><span>Email us and you&rsquo;ll hear back within one business day — usually much sooner.</span></li>
             </ol>
-          </div>
+            </div>
+          </details>
         </div>
       </section>
 
