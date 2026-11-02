@@ -94,8 +94,13 @@
       @media (min-width: 860px) { .two-col { grid-template-columns: 1fr 1fr; } }
       .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
       .panel h3 { margin: 0 0 14px; font-size: 21px; letter-spacing: -0.01em; }
+      .panel h4 { margin: 0 0 10px; font-size: 16px; letter-spacing: -0.01em; }
       .panel p { color: var(--ink-2); font-size: 15.5px; margin: 0 0 12px; }
       .panel p:last-child { margin-bottom: 0; }
+      .panel ul.plain { margin: 0; padding: 0; list-style: none; font-size: 15.5px; }
+      .panel ul.plain li { padding: 6px 0 6px 24px; position: relative; color: var(--ink-2); }
+      .panel ul.plain li::before { content: "—"; position: absolute; left: 0; color: var(--amber); font-weight: 700; }
+      .panel ul.plain li strong { color: var(--ink); }
       .never { list-style: none; margin: 0; padding: 0; }
       .never li { display: flex; gap: 11px; padding: 9px 0; border-top: 1px dashed var(--line); font-size: 15.5px; align-items: flex-start; }
       .never li:first-child { border-top: none; padding-top: 2px; }
@@ -129,6 +134,25 @@
       .plan ul li::before { content: "—"; position: absolute; left: 0; color: var(--amber); font-weight: 700; }
       .breakeven { margin-top: 18px; background: var(--amber-soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; font-size: 15.5px; }
       .breakeven strong { color: var(--ink); }
+      .includes { margin-top: 18px; font-size: 15.5px; color: var(--ink-2); }
+      .includes strong { color: var(--ink); }
+      .table-wrap { overflow-x: auto; }
+      table.compare { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); font-size: 15px; min-width: 560px; }
+      table.compare th, table.compare td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+      table.compare th { font-size: 14px; }
+      table.compare td:first-child { font-weight: 700; white-space: nowrap; }
+      table.compare tr:last-child td { border-bottom: none; }
+      table.compare td.york { color: var(--pine); font-weight: 600; }
+      .table-note { font-size: 13.5px; color: var(--ink-2); margin: 12px 0 0; }
+      .sample-tag {
+        display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 600;
+        letter-spacing: 0.05em; text-transform: uppercase; color: var(--amber);
+        background: var(--amber-soft); border-radius: 6px; padding: 4px 9px; margin-bottom: 14px;
+      }
+      table.mini-report { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+      table.mini-report td { padding: 9px 0; border-top: 1px dashed var(--line); color: var(--ink-2); }
+      table.mini-report td:last-child { text-align: right; font-family: "IBM Plex Mono", monospace; color: var(--ink); font-weight: 600; }
+      table.mini-report tr:first-child td { border-top: none; }
       .contact-shell { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 4vw, 38px); display: grid; gap: 30px; grid-template-columns: 1fr; }
       @media (min-width: 860px) { .contact-shell { grid-template-columns: 0.9fr 1.1fr; } }
       .contact-shell h2 { margin-bottom: 10px; }
@@ -183,13 +207,48 @@
         </ul>
       </div>
 
+      <!-- ================= THE REAL PROBLEM ================= -->
+      <section id="problem">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-tag">The real problem</p>
+            <h2>Where your bookings actually leak</h2>
+          </div>
+          <div class="panel">
+            <ul class="plain">
+              <li><strong>You&rsquo;re on a job. The phone rings out.</strong> The caller dials the next listing.</li>
+              <li><strong>Your site is a quote form and a wait.</strong> With nothing to choose you on, price decides.</li>
+              <li><strong>Enquiries sit in your inbox.</strong> Nobody follows up, and they go cold.</li>
+            </ul>
+          </div>
+          <div class="two-col" style="margin-top: 20px;">
+            <div class="panel">
+              <h4>Today</h4>
+              <ul class="plain">
+                <li>Customer fills in a quote form</li>
+                <li>Waits a day for a callback</li>
+                <li>May already have called someone else</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h4>With a booking page</h4>
+              <ul class="plain">
+                <li>Customer sees an instant estimate</li>
+                <li>Picks a date and books</li>
+                <li>Enquiry lands in your inbox the same day</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ================= PROOF ================= -->
       <section id="proof">
         <div class="wrap">
           <div class="sec-head">
             <p class="sec-tag">Proof of work</p>
             <h2>Pages we&rsquo;ve actually built</h2>
-            <p>Not mock-ups, not screenshots. Real, working pages — open one, try the calculator, fill in the booking form and see the confirmation your customer would get. Yours would be built the same way, for your business.</p>
+            <p>We&rsquo;ve built 21 free demo pages for GTA trades. Here are 8 you can open right now. Not mock-ups, not screenshots — real, working pages. Open one, try the calculator, fill in the booking form and see the confirmation your customer would get. Yours would be built the same way, for your business.</p>
           </div>
           <p class="honest-note"><strong>Honest label:</strong> these are free sample pages we built for real GTA businesses. They are not paying clients — that&rsquo;s the point. This is what you get to inspect before spending anything.</p>
           <div class="cards">
@@ -257,6 +316,7 @@
               <h3>York Digital started in Toronto in October 2026.</h3>
               <p>There&rsquo;s no sales team and no call centre here. You email us, we answer — and everything we agree on stays in writing, in an email thread you can find later.</p>
               <p>We are new, and we don&rsquo;t hide it. No client list to show off yet, no awards, no &ldquo;trusted by hundreds.&rdquo; What we have is finished work you can open and try, and terms in writing. If that&rsquo;s not enough, don&rsquo;t hire us — the demo is still free.</p>
+              <p>We measure success in booking enquiries, not traffic or clicks.</p>
             </div>
             <div class="panel">
               <h3>What you will never find here</h3>
@@ -283,7 +343,7 @@
           <div class="panel">
             <ol class="steps">
               <li><strong>You email us</strong><span>Your business name, your trade, your town. That&rsquo;s all we need to start.</span></li>
-              <li><strong>We build your demo — free</strong><span>A working booking page with your services and your prices, usually within a few business days, before we talk about money.</span></li>
+              <li><strong>We build your demo — free</strong><span>A working booking page with your services and your prices, usually within a few business days, before we talk about money. Every demo starts from the same proven booking-page format, then gets your own services, prices, and town — that&rsquo;s how it can be free and fast.</span></li>
               <li><strong>You check it like a customer</strong><span>Try the calculator, fill in the booking form, read every word. Ask for changes by email.</span></li>
               <li><strong>Happy? Pick a plan</strong><span>Pay through Stripe&rsquo;s checkout when you go ahead. Your page goes live, enquiries start landing in your inbox, plus a short note on how to handle the enquiries that come in — and you can cancel by email whenever you like.</span></li>
             </ol>
@@ -301,6 +361,10 @@
           <details class="faq">
             <summary>Are you a real business?</summary>
             <p>Yes — a new Toronto business, started in October 2026. We don&rsquo;t have a long client list yet, and we won&rsquo;t fake one. That&rsquo;s why the demo comes first, and free: judge the work, not the pitch.</p>
+          </details>
+          <details class="faq">
+            <summary>Can I see reviews of York Digital?</summary>
+            <p>Not yet — we don&rsquo;t have any, and we won&rsquo;t invent them. When we do, they&rsquo;ll live on our public Google profile, where anyone can check them — not as quotes pasted onto this page.</p>
           </details>
           <details class="faq">
             <summary>Why is the demo free? What&rsquo;s the catch?</summary>
@@ -349,6 +413,7 @@
               <li><strong>Cancel by email</strong><span>One email ends a Season Package. No exit interview, no one trying to talk you out of it, no cancellation fee.</span></li>
               <li><strong>You keep your page</strong><span>If you cancel, the page and its content stay yours. We don&rsquo;t hold websites hostage.</span></li>
               <li><strong>Your customers&rsquo; details are yours</strong><span>Enquiries from your page go to your inbox. We don&rsquo;t sell, share, or market to your customer list. Ever.</span></li>
+              <li><strong>Your enquiries are never resold</strong><span>Every enquiry from your page goes to you alone, never to another business.</span></li>
               <li><strong>What counts as an enquiry</strong><span>A valid booking enquiry is a unique request with a name, a reachable phone or email, a service, and an area or date. Spam, duplicates and wrong numbers don&rsquo;t count. You have 7 days to dispute one.</span></li>
               <li><strong>Everything in writing</strong><span>All communication is by email, so every promise either of us makes lives in an email you can find later. Nothing important is ever &ldquo;just said on a call.&rdquo;</span></li>
               <li><strong>Replies within one business day</strong><span>Email us and you&rsquo;ll hear back within one business day — usually much sooner.</span></li>
@@ -391,7 +456,86 @@
               </ul>
             </div>
           </div>
+          <p class="includes"><strong>Every plan includes:</strong> Google Business Profile tune-up, automatic review requests after jobs, and a monthly report of your enquiries.</p>
           <p class="breakeven"><strong>The honest math:</strong> at $30 an enquiry, the $249 Season Package pays for itself at about 8–9 enquiries a month. Expect fewer than that? Start per-enquiry and pay for results only. We&rsquo;ll show you the same arithmetic — it&rsquo;s your call, not our pitch.</p>
+        </div>
+      </section>
+
+      <!-- ================= COMPARE ================= -->
+      <section id="compare">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-tag">How we compare</p>
+            <h2>Us, a typical agency, or doing it yourself</h2>
+            <p>Same decision, three ways to make it. No names, no borrowed claims — just how each route usually works.</p>
+          </div>
+          <div class="table-wrap">
+            <table class="compare">
+              <tr>
+                <th></th>
+                <th>York Digital</th>
+                <th>Typical agency</th>
+                <th>DIY builder</th>
+              </tr>
+              <tr>
+                <td>Demo first</td>
+                <td class="york">Free working demo</td>
+                <td>Rarely free</td>
+                <td>You build it yourself</td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td class="york">$249/month or $30 per enquiry</td>
+                <td>Project fee up front</td>
+                <td>Your time + a monthly builder fee</td>
+              </tr>
+              <tr>
+                <td>Ready in</td>
+                <td class="york">Demo in a few business days</td>
+                <td>Often weeks, built from scratch</td>
+                <td>Whenever you finish it</td>
+              </tr>
+              <tr>
+                <td>Cancel</td>
+                <td class="york">Any time, by email</td>
+                <td>Term contract common</td>
+                <td>Any time</td>
+              </tr>
+              <tr>
+                <td>Page ownership</td>
+                <td class="york">Yours, even if you cancel</td>
+                <td>Depends on the contract</td>
+                <td>Yours</td>
+              </tr>
+              <tr>
+                <td>Enquiries</td>
+                <td class="york">Go only to you, never resold</td>
+                <td>Go to you</td>
+                <td>Go to you</td>
+              </tr>
+            </table>
+          </div>
+          <p class="table-note">The agency and DIY columns describe the usual pattern, not any one company.</p>
+        </div>
+      </section>
+
+      <!-- ================= SAMPLE REPORT ================= -->
+      <section id="sample-report">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-tag">What you get every month</p>
+            <h2>Your monthly report, before you pay for one</h2>
+          </div>
+          <div class="panel">
+            <span class="sample-tag">Sample</span>
+            <p>These numbers are made up to show the format. Your report shows your real enquiries.</p>
+            <table class="mini-report">
+              <tr><td>Enquiries received</td><td>14</td></tr>
+              <tr><td>Valid enquiries</td><td>12</td></tr>
+              <tr><td>Spam filtered</td><td>2</td></tr>
+              <tr><td>Disputed</td><td>0</td></tr>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -401,7 +545,7 @@
           <div class="contact-shell">
             <div>
               <h2>Free demo</h2>
-              <p class="blurb">Ask for your demo. It costs an email. Tell us the business, the trade, and the town. We&rsquo;ll build your demo page and email you the link — no call to sit through, no obligation attached, and the demo is yours to judge before you pay anything.</p>
+              <p class="blurb">Ask for your demo. It costs an email. Tell us the business, the trade, and the town. We&rsquo;ll build your demo page and email you the link — no call to sit through, no obligation attached, and the demo is yours to judge before you pay anything. With it, we&rsquo;ll also flag the two or three places your current page loses bookings.</p>
               <p class="email-line"><a href="mailto:yorkdigital@zohomailcloud.ca">yorkdigital@zohomailcloud.ca</a></p>
               <div class="mini-actions">
                 <a class="mini-btn" href="mailto:yorkdigital@zohomailcloud.ca">Email us directly</a>
